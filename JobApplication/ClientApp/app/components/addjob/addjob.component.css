@@ -1,0 +1,11 @@
+﻿.invalid-feedback{
+    color:orangered;
+}
+.form-control {
+    width: 50%;
+   
+}
+#jobDescription{
+    height:200px;
+}
+

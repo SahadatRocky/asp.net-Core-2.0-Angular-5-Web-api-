@@ -1,0 +1,281 @@
+﻿<h2>Add Job</h2>
+<div class="container ">
+    <form (ngSubmit)="onSubmit()" #JobForm="ngForm">
+
+        <!--Job title-->
+        <div class="form-group has-success">
+            <label class="control-label" for="jobTitle">
+                Job Title
+            </label>
+
+            <input type="text" class="form-control" id="jobTitle" name="jobTitle"
+                   [(ngModel)]="devjob.jobTitle"
+                   #jobTitle="ngModel"
+                   required />
+            <div class="invalid-feedback" *ngIf="!devjob.jobTitle">
+                job Title is Required
+            </div>
+
+        </div>
+
+        <!--Company Name-->
+        <div class="form-group has-success">
+            <label class="control-label" for="companyName">
+                Company Name
+            </label>
+
+            <input type="text" class="form-control" id="companyName" name="companyName"
+                   [(ngModel)]="devjob.companyName"
+                   #companyName="ngModel"
+                   required />
+            <div class="invalid-feedback" *ngIf="!devjob.companyName">
+                Company name is Required
+            </div>
+
+        </div>
+        <!--address1-->
+        <div class="form-group has-success">
+            <label class="control-label" for="address1">
+                Address1
+            </label>
+
+            <input type="text" class="form-control" id="address1" name="address1"
+                   [(ngModel)]="devjob.companyAddress.address1"
+                   #address1="ngModel"
+                   required />
+            <div class="invalid-feedback" *ngIf="!devjob.companyAddress.address1">
+                Address1 is Required
+            </div>
+
+        </div>
+
+        <!--address2-->
+        <div class="form-group has-success">
+            <label class="control-label" for="address2">
+                address2
+            </label>
+
+            <input type="text" class="form-control" id="address2" name="address2"
+                   [(ngModel)]="devjob.companyAddress.address2"
+                   #address2="ngModel"
+                   required />
+            <div class="invalid-feedback" *ngIf="!devjob.companyAddress.address2">
+                address2 is Required
+            </div>
+
+        </div>
+
+        <!--city-->
+        <div class="form-group has-success">
+            <label class="control-label" for="city">
+                City
+            </label>
+
+            <input type="text" class="form-control" id="city" name="city"
+                   [(ngModel)]="devjob.companyAddress.city"
+                   #city="ngModel"
+                   required />
+            <div class="invalid-feedback" *ngIf="!devjob.companyAddress.city">
+                city is Required
+            </div>
+
+        </div>
+        <!--state-->
+        <div class="form-group  has-success" *ngIf="usstates && usstates.length > 0">
+            <label for="state">State</label>
+            <select class="form-control"
+                    #state="ngModel" [(ngModel)]="devjob.companyAddress.state" id="state" name="state" required>
+                <option value="">Please select a State</option>
+                <option *ngFor="let lang of usstates"
+                        [value]="lang.name">
+                    {{lang.name}}
+                </option>
+            </select>
+            <div class="invalid-feedback" *ngIf="!devjob.companyAddress.state">
+                US State is Required
+            </div>
+        </div>
+
+
+        <!--Zipcode-->
+        <div class="form-group has-success">
+            <label class="control-label" for="zipCode">
+                ZipCode
+            </label>
+
+            <input type="text" class="form-control" id="zipCode" name="zipCode"
+                   [(ngModel)]="devjob.companyAddress.zipCode"
+                   #zipCode="ngModel"
+                   required />
+            <div class="invalid-feedback" *ngIf="!devjob.companyAddress.zipCode">
+                zipCode is Required
+            </div>
+
+        </div>
+
+        <!--countryName-->
+        <div class="form-group has-success" *ngIf="Countries && Countries.length > 0">
+            <label for="countryName">CountryName</label>
+            <select class="form-control"
+                    #countryName="ngModel" [(ngModel)]="devjob.companyAddress.countryName" id="countryName" name="countryName" required>
+                <option value="">Please select a Country Name</option>
+                <option *ngFor="let lang of Countries"
+                        [value]="lang.name">
+                    {{lang.name}}
+                </option>
+            </select>
+            <div class="invalid-feedback" *ngIf="!devjob.companyAddress.countryName">
+                Country Name is Required
+            </div>
+        </div>
+        <!--Salary Range-->
+        <div class="form-group has-success">
+            <label class="control-label" for="salaryRange">
+                SalaryRange
+            </label>
+
+            <input type="text" class="form-control" id="salaryRange" name="salaryRange"
+                   [(ngModel)]="devjob.salaryRange"
+                   #salaryRange="ngModel"
+                   required />
+            <div class="invalid-feedback" *ngIf="!devjob.salaryRange">
+                SalaryRange is Required
+            </div>
+
+        </div>
+
+        <!--ExperienceLavel-->
+        <div class="form-group has-success">
+            <label class="control-label" for="experienceLavel">
+                ExperienceLavel
+            </label>
+
+            <input type="text" class="form-control" id="experienceLavel" name="experienceLavel"
+                   [(ngModel)]="devjob.experienceLavel"
+                   #experienceLavel="ngModel"
+                   required />
+            <div class="invalid-feedback" *ngIf="!devjob.experienceLavel">
+                ExperienceLavel is Required
+            </div>
+
+        </div>
+
+        <!--CompanySize-->
+        <div class="form-group has-success">
+            <label class="control-label" for="companySize">
+                CompanySize
+            </label>
+
+            <input type="text" class="form-control" id="companySize" name="companySize"
+                   #companySize="ngModel" [(ngModel)]="devjob.companySize"
+                   required />
+            <div class="invalid-feedback" *ngIf="!devjob.companySize">
+                CompanySize is Required
+            </div>
+
+        </div>
+
+
+        <!--RemoteOptions-->
+        <div class="form-group has-success">
+            <label for="remoteOptions">RemoteOptions</label>
+            <select class="form-control"
+                    #remoteOptions="ngModel" [(ngModel)]="devjob.remoteOptions" id="remoteOptions" name="remoteOptions" required>
+                <option value="">Please select a RemoteOptions</option>
+                <option value="true">Provides remoteOptions</option>
+                <option value="false">No Remote Options Available</option>
+
+            </select>
+
+        </div>
+
+        <!--EquitySharing-->
+        <div class="form-group has-success">
+            <label for="equitySharing">EquitySharing</label>
+            <select class="form-control"
+                    #equitySharing="ngModel" [(ngModel)]="devjob.equitySharing" id="equitySharing" name="equitySharing" required>
+                <option value="">Please select a EquitySharing</option>
+                <option value="true">Provides profit Sharing</option>
+                <option value="false">Does not Provides profit Sharing </option>
+
+            </select>
+        </div>
+
+        <!--CompanyType-->
+        <div class="form-group has-success" *ngIf="companytypes && companytypes.length > 0">
+            <label for="companyTypeId">Company Type</label>
+            <select class="form-control"
+                    #companyTypeId="ngModel" [(ngModel)]="devjob.companyTypeId" id="companyTypeId" name="companyTypeId" required>
+                <option value="">Please select a CompanyType</option>
+                <option *ngFor="let lang of companytypes"
+                        [value]="lang.id">
+                    {{lang.name}}
+                </option>
+            </select>
+            <div class="invalid-feedback" *ngIf="!devjob.companyTypeId">
+                CompanyType is Required
+            </div>
+        </div>
+
+        <!--Job type-->
+        <div class="form-group has-success" *ngIf="jobTypes && jobTypes.length > 0">
+            <label for="jobTypeId">Job type</label>
+            <select class="form-control"
+                    #jobTypeId="ngModel" [(ngModel)]="devjob.jobTypeId" id="jobTypeId" name="jobTypeId" required>
+                <option value="">Please select a jobType</option>
+                <option *ngFor="let lang of jobTypes"
+                        [value]="lang.id">
+                    {{lang.name}}
+                </option>
+            </select>
+            <div class="invalid-feedback" *ngIf="!devjob.jobTypeId">
+                jobTypeId is Required
+            </div>
+        </div>
+
+
+
+
+        <!--Industry Type-->
+        <div class="form-group has-success" *ngIf="industrytypes && industrytypes.length > 0">
+            <label for="industryId">Industry Type</label>
+            <select class="form-control"
+                    #industryId="ngModel" [(ngModel)]="devjob.industryId" id="industryId" name="industryId" required>
+                <option value="">Please select a Industry Id</option>
+                <option *ngFor="let lang of industrytypes"
+                        [value]="lang.id">
+                    {{lang.name}}
+                </option>
+            </select>
+            <div class="invalid-feedback" *ngIf="!devjob.industryId">
+                Industry Type is Required
+            </div>
+        </div>
+
+        <!--jobDescription-->
+        <div class="form-group has-success">
+            <label class="control-label" for="jobDescription">
+                JobDescription
+            </label>
+
+            <input type="text" class="form-control" id="jobDescription" name="jobDescription"
+                   [(ngModel)]="devjob.jobDescription"
+                   #jobDescription="ngModel"
+                   required />
+            <div class="invalid-feedback" *ngIf="!devjob.jobDescription">
+                jobDescription is Required
+            </div>
+
+        </div>
+
+        <!--Button-->
+        <button type="submit" class="btn btn-success btn-lg"
+                [disabled]="!JobForm.form.valid">
+            Add Job
+        </button>
+        <button class="btn btn-danger btn-lg">Reset</button>
+
+
+    </form>
+
+</div>

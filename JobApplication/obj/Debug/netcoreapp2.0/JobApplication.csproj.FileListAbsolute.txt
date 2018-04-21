@@ -1,0 +1,11 @@
+E:\core 2\JobApplication\JobApplication\bin\Debug\netcoreapp2.0\JobApplication.deps.json
+E:\core 2\JobApplication\JobApplication\bin\Debug\netcoreapp2.0\JobApplication.runtimeconfig.json
+E:\core 2\JobApplication\JobApplication\bin\Debug\netcoreapp2.0\JobApplication.runtimeconfig.dev.json
+E:\core 2\JobApplication\JobApplication\bin\Debug\netcoreapp2.0\JobApplication.dll
+E:\core 2\JobApplication\JobApplication\bin\Debug\netcoreapp2.0\JobApplication.pdb
+E:\core 2\JobApplication\JobApplication\obj\Debug\netcoreapp2.0\JobApplication.csproj.CoreCompileInputs.cache
+E:\core 2\JobApplication\JobApplication\obj\Debug\netcoreapp2.0\JobApplication.AssemblyInfoInputs.cache
+E:\core 2\JobApplication\JobApplication\obj\Debug\netcoreapp2.0\JobApplication.AssemblyInfo.cs
+E:\core 2\JobApplication\JobApplication\obj\Debug\netcoreapp2.0\JobApplication.dll
+E:\core 2\JobApplication\JobApplication\obj\Debug\netcoreapp2.0\JobApplication.pdb
+E:\core 2\JobApplication\JobApplication\obj\Debug\netcoreapp2.0\JobApplication.csprojResolveAssemblyReference.cache

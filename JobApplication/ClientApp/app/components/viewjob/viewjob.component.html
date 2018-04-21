@@ -1,0 +1,58 @@
+﻿<h2>View Page</h2>
+<div class="container">
+    <div class="row">
+        <table class="table table-bordered table-dark">
+            <thead >
+                <tr class="bg-info">
+                    <th>Created Date</th>
+                    <th>Job Title</th>
+                    <th>Company Name</th>
+                    <th>Company Address</th>
+                    <th>Salary Range</th>
+                    <th>Job Type</th>
+                    <th>Industry</th>
+                    <th>Company Type</th>
+                    <th>Experience level</th>
+                    <th>Company Size</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let s of jobs">
+                    <td>{{s.createdDate | timesince }}</td>
+                    <td>
+                        {{s.jobTitle}}
+                        <span *ngIf="s.isNewJob" class="glyphicon-bell">
+                            new JOb
+                        </span>
+                    </td>
+                    <td>{{s.companyName}}</td>
+                    <td>
+                        <span>{{s.companyAddress.address1}}</span>
+                        <div>
+                            <span>{{s.companyAddress.city}}</span>
+                            <span>{{s.companyAddress.state}}</span>
+                            <span>{{s.companyAddress.zipCode}}</span>
+                        </div>
+                        <div>
+                            <span>{{s.companyName.countryName}}</span>
+                        </div>
+                    </td>
+                    <td>{{s.salaryRange}}</td>
+                    <td>{{s.jobTypeName}}</td>
+                    <td>{{s.industryName}}</td>
+                    <td>{{s.companyTypeName}}</td>
+                    <td>{{s.experienceLavel}}</td>
+                    <td>{{s.companySize}}</td>
+                    <td>
+                        <a (click)="edit(s.developerjobId)"><i class="glyphicon glyphicon-edit" style="font-size:40px;"></i></a><br/><br />
+                        <a (click)="delete(s.developerjobId)"><i class="glyphicon glyphicon-trash" style="font-size:40px;"></i></a><br/><br />
+                        <a><i class="glyphicon glyphicon-list-alt" style="font-size:40px;"></i></a><br/><br />
+
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
